@@ -63,6 +63,23 @@ export function ChevronDownIcon(props: IconProps) {
   );
 }
 
+export function MountainIcon(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <path d="m3 20 6.5-11 4 6.5L16 12l5 8H3Z" />
+    </svg>
+  );
+}
+
+export function MapPinIcon(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11Z" />
+      <circle cx="12" cy="10" r="2.25" />
+    </svg>
+  );
+}
+
 export function ArrowLeftIcon(props: IconProps) {
   return (
     <svg {...base} {...props}>

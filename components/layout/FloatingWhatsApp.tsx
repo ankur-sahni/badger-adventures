@@ -1,10 +1,14 @@
-import { WhatsAppIcon } from "@/components/icons";
-import { whatsappUrl } from "@/lib/whatsapp";
+"use client";
 
-export function FloatingWhatsApp({ message }: { message?: string }) {
+import { usePathname } from "next/navigation";
+import { WhatsAppIcon } from "@/components/icons";
+import { tripWhatsAppMessage, whatsappUrl } from "@/lib/whatsapp";
+
+export function FloatingWhatsApp({ tripNamesByPath }: { tripNamesByPath: Record<string, string> }) {
+  const tripName = tripNamesByPath[usePathname()];
   return (
     <a
-      href={whatsappUrl(message)}
+      href={whatsappUrl(tripName ? tripWhatsAppMessage(tripName) : undefined)}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat with Badger Adventures on WhatsApp"

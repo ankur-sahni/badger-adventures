@@ -13,10 +13,10 @@ export function SectionHeading({ eyebrow, title, subtitle, tone = "light", id }:
   return (
     <Reveal className="max-w-2xl">
       <p className={`eyebrow ${muted}`}>{eyebrow}</p>
-      <h2 id={id} className="mt-5 font-display text-4xl leading-[1.08] font-light text-balance sm:text-5xl lg:text-6xl">
+      <h2 id={id} className="mt-3 font-display text-3xl leading-[1.1] font-light text-balance sm:text-4xl">
         {title}
       </h2>
-      {subtitle && <p className={`mt-5 max-w-xl text-lg leading-relaxed ${muted}`}>{subtitle}</p>}
+      {subtitle && <p className={`mt-3 max-w-xl leading-relaxed ${muted}`}>{subtitle}</p>}
     </Reveal>
   );
 }

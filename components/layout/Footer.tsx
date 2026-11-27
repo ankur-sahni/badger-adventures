@@ -12,7 +12,7 @@ async function CopyrightYear() {
 export function Footer() {
   return (
     <footer className="border-t border-slate/50 bg-navy text-snow">
-      <div className="container-page flex flex-col gap-10 py-14 lg:flex-row lg:items-center lg:justify-between">
+      <div className="container-page flex flex-col gap-6 py-8 lg:flex-row lg:items-center lg:justify-between">
         <Wordmark />
         <nav aria-label="Footer">
           <ul className="flex flex-wrap gap-x-8 gap-y-2">
@@ -29,7 +29,7 @@ export function Footer() {
           </ul>
         </nav>
       </div>
-      <div className="container-page border-t border-slate/40 py-6 text-sm text-ice">
+      <div className="container-page border-t border-slate/40 py-4 text-sm text-ice">
         <p>
           &copy; <CopyrightYear /> {site.name}. {site.address.display}.
         </p>

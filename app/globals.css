@@ -45,15 +45,15 @@
 }
 
 @utility section-y {
-  padding-block: 6rem;
+  padding-block: 3rem;
   @media (width >= 48rem) {
-    padding-block: 8rem;
+    padding-block: 4rem;
   }
 }
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 5rem;
+  scroll-padding-top: 4rem;
 }
 
 body {

@@ -1,12 +1,14 @@
 import { site } from "@/config/site";
+import { enquiryTripOptions } from "@/lib/trips";
 import { InstagramIcon, PhoneIcon } from "@/components/icons";
+import { EnquiryForm } from "@/components/EnquiryForm";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Reveal } from "@/components/Reveal";
 
 export function Contact() {
   return (
     <section id="contact" aria-labelledby="contact-title" className="section-y bg-navy text-snow">
-      <div className="container-page flex flex-col gap-16 lg:flex-row lg:gap-20">
+      <div className="container-page flex flex-col gap-10 lg:flex-row lg:gap-14">
         <div className="lg:w-5/12">
           <SectionHeading
             id="contact-title"
@@ -16,7 +18,7 @@ export function Contact() {
             tone="dark"
           />
           <Reveal delay={120}>
-            <ul className="mt-12 flex flex-col gap-4 text-lg">
+            <ul className="mt-6 flex flex-col gap-1">
               {site.phones.map((phone) => (
                 <li key={phone.tel}>
                   <a
@@ -45,12 +47,15 @@ export function Contact() {
                   </span>
                 </a>
               </li>
-              <li className="eyebrow pt-4 text-ice">
+              <li className="eyebrow pt-3 text-ice">
                 <address className="not-italic">{site.address.display}</address>
               </li>
             </ul>
           </Reveal>
         </div>
+        <Reveal delay={160} className="lg:w-7/12">
+          <EnquiryForm tripOptions={enquiryTripOptions} />
+        </Reveal>
       </div>
     </section>
   );

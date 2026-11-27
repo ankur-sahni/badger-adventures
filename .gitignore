@@ -51,3 +51,4 @@ next-env.d.ts
 AGENTS.md
 CLAUDE.md
 .claude/
+.playwright-mcp/

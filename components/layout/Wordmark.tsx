@@ -5,7 +5,7 @@ export function Wordmark({ className = "", onClick }: { className?: string; onCl
     <Link
       href="/"
       onClick={onClick}
-      className={`inline-flex min-h-11 items-center font-display text-lg font-medium tracking-[0.32em] whitespace-nowrap uppercase sm:text-xl ${className}`}
+      className={`inline-flex min-h-11 items-center font-display text-base font-medium tracking-[0.3em] whitespace-nowrap uppercase sm:text-lg ${className}`}
     >
       Badger Adventures
     </Link>

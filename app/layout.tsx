@@ -4,7 +4,10 @@ import { site } from "@/config/site";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { FloatingWhatsApp } from "@/components/layout/FloatingWhatsApp";
+import { allTrips, tripHref } from "@/lib/trips";
 import "./globals.css";
+
+const tripNamesByPath = Object.fromEntries(allTrips.map((trip) => [tripHref(trip), trip.name]));
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
@@ -42,7 +45,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
-        <FloatingWhatsApp />
+        <FloatingWhatsApp tripNamesByPath={tripNamesByPath} />
       </body>
     </html>
   );

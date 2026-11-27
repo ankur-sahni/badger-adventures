@@ -1,13 +1,11 @@
 // Every image and video slot on the site. Swap a photo by changing its `src` here.
 // Current photos: Unsplash (free licence). Hero video: Pexels (free licence).
-
-export type ImageAsset = {
-  src: string;
-  alt: string;
-};
+import type { ImageAsset } from "@/types";
 
 const unsplash = (id: string) =>
   `https://images.unsplash.com/${id}?auto=format&fit=crop&w=2400&q=80`;
+
+const img = (id: string, alt: string): ImageAsset => ({ src: unsplash(id), alt });
 
 export const heroVideo = {
   // Pexels #6693764, 1366x720. Replace with your own footage when available.
@@ -16,12 +14,96 @@ export const heroVideo = {
 } as const;
 
 export const images = {
-  hero: {
-    src: unsplash("photo-1454496522488-7a8e488e8606"),
-    alt: "Snow-covered Himalayan peaks rising above a long mountain range",
-  },
-  about: {
-    src: unsplash("photo-1791370234119-980de6a526c1"),
-    alt: "A single tent pitched on a grassy mountain slope above a valley filled with cloud",
-  },
+  hero: img(
+    "photo-1454496522488-7a8e488e8606",
+    "Snow-covered Himalayan peaks rising above a long mountain range",
+  ),
+  about: img(
+    "photo-1791370234119-980de6a526c1",
+    "A single tent pitched on a grassy mountain slope above a valley filled with cloud",
+  ),
 } satisfies Record<string, ImageAsset>;
+
+// Stock stand-ins per trip until real trip photos are available.
+export const tripImages: Record<string, { hero: ImageAsset; gallery: ImageAsset[] }> = {
+  "chandrakhani-pass-trek": {
+    hero: img("photo-1718179118802-a46fcd082e9f", "Green alpine meadow sloping towards forested ridges and snow peaks"),
+    gallery: [
+      img("photo-1773739967497-e09144a822d4", "Snow-capped mountains behind a stand of tall pine trees"),
+      img("photo-1572109801525-0bb0272e8579", "Trekkers resting on a green meadow below a snow peak"),
+      img("photo-1503265192943-9d7eea6fc77a", "Tents pitched on a grassy campsite below grey mountains"),
+    ],
+  },
+  "beas-kund-trek": {
+    hero: img("photo-1718183159118-12f96f031613", "Grassy hillside facing a long wall of snow-covered peaks"),
+    gallery: [
+      img("photo-1670088776580-e44d6a2a29e3", "Snow-covered boulders on a high trail with mountains behind"),
+      img("photo-1519719498756-2f0d81cdf13b", "Pack mules walking along a rocky mountain trail"),
+      img("photo-1587377758203-07b1d983923d", "Snow-covered mountains under a clear blue sky"),
+    ],
+  },
+  "rani-sui-lake-trek": {
+    hero: img("photo-1658954338931-3ae54dc697f5", "A small alpine lake in a green basin ringed by mountains"),
+    gallery: [
+      img("photo-1661318977466-5fbd41d8ed83", "A small lake sitting in a high mountain valley"),
+      img("photo-1768383565166-0c17033a91df", "Tents beside a stream in a remote mountain valley"),
+      img("photo-1767756472218-04f165c3f72c", "A lantern and prayer flags hanging in front of distant peaks"),
+    ],
+  },
+  "bhrigu-lake-trek": {
+    hero: img("photo-1718115575222-6d26c5e5e0b9", "Bhrigu Lake partly frozen in a snowy basin under dark clouds"),
+    gallery: [
+      img("photo-1718183159115-972a4606a073", "Trekkers walking across a wide green meadow towards snow peaks"),
+      img("photo-1724405504642-39518cce855a", "Tents pitched in front of a snow-covered mountain slope"),
+      img("photo-1718183159109-3f2364850d10", "A rider on horseback crossing a green alpine meadow"),
+    ],
+  },
+  "ghepan-lake-trek": {
+    hero: img("photo-1777010147757-d9fd181e404a", "Snowy mountains reflected in a deep blue glacial lake"),
+    gallery: [
+      img("photo-1697984286841-5cedb7885109", "A high-altitude lake in the dry mountains of Lahaul"),
+      img("photo-1723575410239-15eba0b813e3", "A line of trekkers walking up a trail towards snow peaks"),
+      img("photo-1787937710893-8504ad365cbd", "A blue tent on a grassy slope below jagged snow-dusted peaks"),
+    ],
+  },
+  "sar-pass-trek": {
+    hero: img("photo-1522527414937-8b7363e8701d", "Two trekkers walking up a snow-covered mountain slope"),
+    gallery: [
+      img("photo-1663685251714-a097ba68f776", "Snowy mountains above a pine forest in Parvati Valley"),
+      img("photo-1519229875649-6b8da16368fd", "Two trekkers climbing a snow slope towards a ridge"),
+      img("photo-1784223042072-69cd9e864860", "A campfire beside tents under snow-capped mountains at night"),
+    ],
+  },
+  "patalsu-peak-trek": {
+    hero: img("photo-1526963057617-9bc28fd645e5", "Trekkers climbing a steep snow-covered ridge"),
+    gallery: [
+      img("photo-1592548890095-cd2a7aeca5ac", "Snow-covered mountains above a forested valley"),
+      img("photo-1626621341517-bbf3d9990a23", "A trekker standing on a snowy summit slope"),
+      img("photo-1530738270955-2ed78de5c2a9", "A group of trekkers on a snow-covered ridge"),
+    ],
+  },
+  "shrikhand-mahadev-trek": {
+    hero: img("photo-1707072314299-a5cfd618c851", "A snow-covered valley with a stream running between steep mountains"),
+    gallery: [
+      img("photo-1772625719423-5f2ba59ab1b4", "A snow-capped peak emerging from cloud"),
+      img("photo-1652501834567-937de29c4533", "A river running through a deep forested valley"),
+      img("photo-1720882981421-f471d691ba3c", "Prayer flags strung across a mountainside"),
+    ],
+  },
+  "friendship-peak-expedition": {
+    hero: img("photo-1643903096045-07741be1f245", "A climber with an ice axe ascending a snow-covered mountain"),
+    gallery: [
+      img("photo-1612360069998-dec1c5e14a9e", "A climber standing on a snow ridge with rocky peaks behind"),
+      img("photo-1528148204584-a1910b6efa11", "A rope team of climbers moving across a high mountain top"),
+      img("photo-1788237860425-69ac282e1bed", "Snow-covered peaks rising above a rocky foreground and low cloud"),
+    ],
+  },
+  "yunam-peak-expedition": {
+    hero: img("photo-1634040843188-5ca36cf26cc1", "A climber standing below a steep snow-covered summit pyramid"),
+    gallery: [
+      img("photo-1679249013646-d2d06e70cf7d", "A high-altitude lake below a range of snow peaks"),
+      img("photo-1679249013140-91ed78b13e33", "Climbers standing beside a frozen lake high in the mountains"),
+      img("photo-1788238025460-b541321dc5f0", "Snow-covered mountains rising above a wide valley floor"),
+    ],
+  },
+};

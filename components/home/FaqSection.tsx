@@ -6,7 +6,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 export function FaqSection() {
   return (
     <section aria-labelledby="faq-title" className="section-y">
-      <div className="container-page flex flex-col gap-14 lg:flex-row lg:gap-20">
+      <div className="container-page flex flex-col gap-8 lg:flex-row lg:gap-14">
         <div className="lg:w-5/12">
           <SectionHeading id="faq-title" eyebrow="FAQ" title="Questions before you go" />
         </div>

@@ -83,10 +83,10 @@ export function Navbar() {
           solid ? "bg-navy shadow-[0_8px_30px_-20px_rgb(0_0_0/0.6)]" : "bg-transparent"
         }`}
       >
-        <nav aria-label="Main" className="container-page flex h-18 items-center justify-between gap-6 lg:h-20">
+        <nav aria-label="Main" className="container-page flex h-16 items-center justify-between gap-6">
           <Wordmark onClick={close} />
 
-          <ul className="hidden items-center gap-9 lg:flex">
+          <ul className="hidden items-center gap-8 lg:flex">
             {navLinks.map((link) => {
               const active = isActive(pathname, link.href);
               return (
@@ -124,7 +124,7 @@ export function Navbar() {
         ref={menuRef}
         inert={!open}
         // Visibility only transitions on close; on open it must flip at once so the first link can take focus.
-        className={`fixed inset-0 z-40 flex flex-col bg-navy pt-24 text-snow duration-300 ease-[var(--ease-soft)] lg:hidden ${
+        className={`fixed inset-0 z-40 flex flex-col bg-navy pt-20 text-snow duration-300 ease-[var(--ease-soft)] lg:hidden ${
           open ? "visible opacity-100 transition-opacity" : "invisible opacity-0 transition-[opacity,visibility]"
         }`}
       >
@@ -142,7 +142,7 @@ export function Navbar() {
                   href={link.href}
                   onClick={close}
                   aria-current={isActive(pathname, link.href) ? "page" : undefined}
-                  className="flex min-h-16 items-center font-display text-4xl font-light aria-[current=page]:text-ice"
+                  className="flex min-h-14 items-center font-display text-3xl font-light aria-[current=page]:text-ice"
                 >
                   {link.label}
                 </Link>
