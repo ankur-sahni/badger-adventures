@@ -46,3 +46,8 @@ next-env.d.ts
 .eslintcache
 .turbo
 .swc
+
+# agent and editor files (keep repo to the Next.js project only)
+AGENTS.md
+CLAUDE.md
+.claude/
