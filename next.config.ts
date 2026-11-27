@@ -8,6 +8,7 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "images.unsplash.com", pathname: "/**" },
     ],
     qualities: [75],
+    formats: ["image/avif", "image/webp"],
   },
   turbopack: {
     rules: {

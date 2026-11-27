@@ -6,7 +6,16 @@ import { FaqAccordion } from "@/components/FaqAccordion";
 import { EnquiryForm } from "@/components/EnquiryForm";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
-import { enquiryTripOptions, formatDuration, formatFeet, formatMetres, formatPrice } from "@/lib/trips";
+import { JsonLd } from "@/components/JsonLd";
+import {
+  enquiryTripOptions,
+  formatDuration,
+  formatFeet,
+  formatMetres,
+  formatPrice,
+  itineraryLabel,
+} from "@/lib/trips";
+import { faqPageSchema, touristTripSchema } from "@/lib/seo";
 
 export function TripPage({ trip }: { trip: Trip }) {
   const altitude = `${formatFeet(trip.maxAltitudeFt)} (${formatMetres(trip.maxAltitudeM)})`;
@@ -21,6 +30,8 @@ export function TripPage({ trip }: { trip: Trip }) {
 
   return (
     <>
+      <JsonLd data={touristTripSchema(trip)} />
+      <JsonLd data={faqPageSchema(trip.faqs)} />
       <section className="relative isolate flex h-[62svh] min-h-[26rem] max-h-[36rem] items-end overflow-hidden text-snow">
         <Image
           src={trip.heroImage.src}
@@ -76,7 +87,11 @@ export function TripPage({ trip }: { trip: Trip }) {
       <section aria-labelledby="itinerary-title" className="section-y bg-ice/25">
         <div className="container-page flex flex-col gap-8 lg:flex-row lg:gap-14">
           <div className="lg:w-4/12">
-            <SectionHeading id="itinerary-title" eyebrow="Itinerary" title="Day by day" />
+            <SectionHeading
+              id="itinerary-title"
+              eyebrow="Itinerary"
+              title={trip.durationDays === 1 ? "Hour by hour" : "Day by day"}
+            />
           </div>
           <Reveal delay={100} className="lg:w-8/12">
             <Accordion
@@ -84,12 +99,12 @@ export function TripPage({ trip }: { trip: Trip }) {
                 key: `day-${day.day}`,
                 heading: (
                   <span className="flex items-baseline gap-4">
-                    <span className="eyebrow w-14 shrink-0 whitespace-nowrap text-slate">Day {day.day}</span>
+                    <span className="eyebrow w-20 shrink-0 whitespace-nowrap text-slate">{itineraryLabel(day)}</span>
                     <span className="font-display text-lg font-normal sm:text-xl">{day.title}</span>
                   </span>
                 ),
                 content: (
-                  <div className="max-w-2xl sm:pl-16">
+                  <div className="max-w-2xl sm:pl-24">
                     {day.facts && <p className="text-sm font-medium text-slate">{day.facts.join(" · ")}</p>}
                     <p className="mt-2 text-[15px] leading-relaxed text-slate">{day.description}</p>
                   </div>

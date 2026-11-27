@@ -26,6 +26,7 @@ const inr = new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR",
 const grouped = new Intl.NumberFormat("en-IN");
 
 export const formatPrice = (amount: number) => inr.format(amount);
-export const formatDuration = (days: number) => `${days}D/${days - 1}N`;
+export const formatDuration = (days: number) => (days === 1 ? "Day hike" : `${days}D/${days - 1}N`);
+export const itineraryLabel = (day: { day: number; label?: string }) => day.label ?? `Day ${day.day}`;
 export const formatFeet = (feet: number) => `${grouped.format(feet)} ft`;
 export const formatMetres = (metres: number) => `${grouped.format(metres)} m`;

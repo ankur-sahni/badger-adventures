@@ -4,7 +4,13 @@ import type { Trip } from "@/types";
 import { MapPinIcon, MountainIcon } from "@/components/icons";
 import { formatDuration, formatFeet, formatPrice, tripHref } from "@/lib/trips";
 
-export function TripCard({ trip }: { trip: Trip }) {
+type TripCardProps = {
+  trip: Trip;
+  headingLevel?: "h2" | "h3";
+  preloadImage?: boolean;
+};
+
+export function TripCard({ trip, headingLevel: Heading = "h3", preloadImage = false }: TripCardProps) {
   return (
     <Link
       href={tripHref(trip)}
@@ -15,12 +21,13 @@ export function TripCard({ trip }: { trip: Trip }) {
           src={trip.heroImage.src}
           alt={trip.heroImage.alt}
           fill
+          preload={preloadImage}
           sizes="(min-width: 1280px) 400px, (min-width: 1024px) 31vw, (min-width: 768px) 46vw, 86vw"
           className="object-cover transition-transform duration-[400ms] ease-[var(--ease-soft)] group-hover:scale-105"
         />
       </div>
       <div className="flex flex-1 flex-col gap-2 p-5">
-        <h3 className="font-display text-2xl leading-tight font-medium">{trip.name}</h3>
+        <Heading className="font-display text-2xl leading-tight font-medium">{trip.name}</Heading>
         <p className="flex items-center gap-2 text-sm text-slate">
           <MountainIcon className="size-4 shrink-0" />
           <span>

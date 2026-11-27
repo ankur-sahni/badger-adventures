@@ -56,6 +56,11 @@ html {
   scroll-padding-top: 4rem;
 }
 
+/* Lock page scroll behind the gallery lightbox. */
+html:has(dialog[open]) {
+  overflow: hidden;
+}
+
 body {
   background-color: var(--color-snow);
   color: var(--color-navy);
@@ -67,6 +72,12 @@ body {
 :focus-visible {
   outline: 2px solid var(--color-gold);
   outline-offset: 3px;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
 }
 
 .reveal {

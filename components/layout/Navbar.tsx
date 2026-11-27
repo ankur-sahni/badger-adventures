@@ -80,7 +80,9 @@ export function Navbar() {
     <div onKeyDown={trapFocus}>
       <header
         className={`fixed inset-x-0 top-0 z-50 text-snow transition-[background-color,box-shadow] duration-500 ease-[var(--ease-soft)] ${
-          solid ? "bg-navy shadow-[0_8px_30px_-20px_rgb(0_0_0/0.6)]" : "bg-transparent"
+          solid
+            ? "bg-navy shadow-[0_8px_30px_-20px_rgb(0_0_0/0.6)]"
+            : "bg-[linear-gradient(180deg,rgb(11_31_51/0.55),rgb(11_31_51/0))]"
         }`}
       >
         <nav aria-label="Main" className="container-page flex h-16 items-center justify-between gap-6">

@@ -4,7 +4,6 @@ import { reachManali, standardTrekExclusions } from "./shared";
 
 // Itineraries, inclusions and exclusions come from the Badger Adventures itinerary PDFs.
 // TODO: verify with guides: altitudes, best season, fitness and FAQ text (season and access researched online).
-// TODO: placeholder prices. Replace pricePerPersonINR with real prices.
 
 export const treks: Trip[] = [
   {
@@ -12,14 +11,14 @@ export const treks: Trip[] = [
     name: "Chandrakhani Pass Trek",
     category: "trek",
     featured: true,
-    order: 1,
+    order: 3,
     region: "Kullu Valley",
     route: "Manali to Manali",
     durationDays: 3,
     maxAltitudeM: 3660,
     maxAltitudeFt: 12000,
     difficulty: "Easy",
-    pricePerPersonINR: 6500,
+    pricePerPersonINR: 7200,
     shortDescription: "Pine forest, open meadows and wide views over the Kullu and Parvati valleys.",
     overview: [
       "Chandrakhani Pass sits on a high ridge in the Kullu Valley, with views across the Pir Panjal, the Parvati Range and Deo Tibba. The trail climbs from Rumsu village through pine and oak forest into wide alpine meadows.",
@@ -94,14 +93,14 @@ export const treks: Trip[] = [
     name: "Beas Kund Trek",
     category: "trek",
     featured: true,
-    order: 2,
+    order: 4,
     region: "Solang Valley",
     route: "Manali to Manali",
     durationDays: 3,
     maxAltitudeM: 3690,
     maxAltitudeFt: 12100,
     difficulty: "Easy",
-    pricePerPersonINR: 6500,
+    pricePerPersonINR: 6200,
     shortDescription: "A short walk from Solang Valley to the glacial source of the Beas River.",
     overview: [
       "Beas Kund is the glacial lake at the source of the Beas River, set in a high basin below Hanuman Tibba, Friendship Peak and the Seven Sisters. The trail starts above Solang Valley and follows the river through meadow and moraine.",
@@ -177,14 +176,14 @@ export const treks: Trip[] = [
     name: "Rani Sui Lake Trek",
     category: "trek",
     featured: true,
-    order: 3,
+    order: 5,
     region: "Manali",
     route: "Manali to Manali",
     durationDays: 3,
     maxAltitudeM: 3400,
     maxAltitudeFt: 11155,
     difficulty: "Moderate",
-    pricePerPersonINR: 6500,
+    pricePerPersonINR: 7200,
     shortDescription: "Starts on foot from Manali and climbs through forest to a quiet meadow lake.",
     overview: [
       "Rani Sui is a small lake in alpine meadows above Manali, reached on foot straight from town near Hadimba Temple. The trail climbs through pine, cedar and oak forest to the meadows of Lama Dugh.",
@@ -256,14 +255,14 @@ export const treks: Trip[] = [
     name: "Bhrigu Lake Trek",
     category: "trek",
     featured: true,
-    order: 4,
+    order: 7,
     region: "Manali",
     route: "Manali to Manali",
     durationDays: 3,
     maxAltitudeM: 4267,
     maxAltitudeFt: 14000,
     difficulty: "Moderate",
-    pricePerPersonINR: 6500,
+    pricePerPersonINR: 7200,
     shortDescription: "Forest, wide alpine meadows and a high lake that changes with the season.",
     overview: [
       "Bhrigu Lake sits at about 4,267 m above Manali, surrounded by the Pir Panjal and Dhauladhar ranges, with views of Friendship Peak, Deo Tibba and Hanuman Tibba. The route climbs from Kulang village through forest into large alpine meadows.",
@@ -332,14 +331,14 @@ export const treks: Trip[] = [
     name: "Ghepan Lake Trek",
     category: "trek",
     featured: true,
-    order: 5,
+    order: 8,
     region: "Lahaul",
     route: "Manali to Manali",
     durationDays: 4,
     maxAltitudeM: 4140,
     maxAltitudeFt: 13583,
     difficulty: "Moderate",
-    pricePerPersonINR: 9500,
+    pricePerPersonINR: 12000,
     shortDescription: "Across the Atal Tunnel to a turquoise glacial lake in remote Lahaul.",
     overview: [
       "Ghepan Lake is a glacial lake at about 4,140 m in Lahaul, known for its turquoise water and the snow peaks that surround it. The route starts at Sissu, across the Atal Tunnel from Manali, and climbs through valleys, meadows and rocky ground.",
@@ -421,14 +420,14 @@ export const treks: Trip[] = [
     name: "Sar Pass Trek",
     category: "trek",
     featured: true,
-    order: 6,
+    order: 9,
     region: "Parvati Valley",
     route: "Kasol to Barshaini",
     durationDays: 5,
     maxAltitudeM: 4200,
     maxAltitudeFt: 13800,
     difficulty: "Moderate",
-    pricePerPersonINR: 9000,
+    pricePerPersonINR: 8200,
     shortDescription: "Five days through Parvati forests and snowfields, with a long slide off the pass.",
     overview: [
       "Sar Pass crosses a high ridge above the Parvati Valley, starting in Kasol and finishing at Barshaini. Over about 42 km the trail moves through rhododendron and pine forest, Grahan village, open meadows and snowfields to the pass at around 4,200 m.",
@@ -517,14 +516,14 @@ export const treks: Trip[] = [
     name: "Patalsu Peak Trek",
     category: "trek",
     featured: true,
-    order: 7,
+    order: 10,
     region: "Solang Valley",
     route: "Manali to Manali",
     durationDays: 3,
     maxAltitudeM: 4264,
     maxAltitudeFt: 13990,
     difficulty: "Challenging",
-    pricePerPersonINR: 6000,
+    pricePerPersonINR: 7200,
     shortDescription: "A short, steep summit above Solang Valley with views of Hanuman and Deo Tibba.",
     overview: [
       "Patalsu Peak rises to about 13,990 ft above Solang Valley, with views of Friendship Peak, Hanuman Tibba, Deo Tibba and the Beas Kund peaks. It is a real summit without the technical demands of an expedition.",
@@ -602,14 +601,14 @@ export const treks: Trip[] = [
     name: "Shrikhand Mahadev Trek",
     category: "trek",
     featured: true,
-    order: 8,
+    order: 12,
     region: "Kullu district",
     route: "Fancha to Fancha",
     durationDays: 5,
     maxAltitudeM: 5227,
     maxAltitudeFt: 17149,
     difficulty: "Challenging",
-    pricePerPersonINR: 12000,
+    pricePerPersonINR: 17000,
     shortDescription: "A demanding pilgrimage to a natural rock Shivling at 5,227 m.",
     overview: [
       "Shrikhand Mahadev is a sacred pilgrimage site at 5,227 m in Kullu district, known for its tall natural rock Shivling. Devotees believe Lord Shiva meditated here, and it is one of the most revered pilgrimages in the Himalayas.",
@@ -692,5 +691,386 @@ export const treks: Trip[] = [
     ],
     heroImage: tripImages["shrikhand-mahadev-trek"].hero,
     galleryImages: tripImages["shrikhand-mahadev-trek"].gallery,
+  },
+  {
+    slug: "kanyal-dhungri-trail",
+    name: "Kanyal to Dhungri Trail",
+    category: "trek",
+    featured: true,
+    order: 1,
+    region: "Manali",
+    route: "Kanyal to Hadimba Temple",
+    durationDays: 1,
+    // TODO: verify with guides: highest point of the trail (no published figure found).
+    maxAltitudeM: 2300,
+    maxAltitudeFt: 7550,
+    difficulty: "Easy",
+    pricePerPersonINR: 4200,
+    shortDescription: "A gentle half-day walk through villages, orchards and deodar forest to Hadimba Temple.",
+    overview: [
+      "A half-day walk on the edge of Manali, from Kanyal village through apple orchards, traditional houses and deodar and pine forest to Dhungri. It is a quiet way to see village life and the valley away from the busy town streets.",
+      "The trail ends at Hadimba Devi Temple, built in 1553 in an old deodar forest and known for its tiered wooden pagoda roof. Time to explore the temple is built into the morning.",
+    ],
+    bestSeason:
+      "March to June and September to November for clear, mild days. It also works in winter when the trail is free of heavy snow. Expect wet paths in July and August.",
+    fitnessLevel:
+      "Easy. About 5 km over 3 to 4 hours on village and forest paths, suitable for families and anyone who walks regularly.",
+    howToReach: `We drive 7 km from Manali to Kanyal village; the walk ends at Hadimba Devi Temple, about 2 km from Mall Road. ${reachManali}`,
+    itinerary: [
+      {
+        day: 1,
+        label: "8:30 AM",
+        title: "Drive from Manali to Kanyal",
+        facts: ["Drive 7 km"],
+        description:
+          "After an early breakfast we drive to Kanyal village through orchards and old Himalayan houses, meet the trek leader and get ready for the walk.",
+      },
+      {
+        day: 2,
+        label: "9:00 AM",
+        title: "Walk from Kanyal towards Dhungri",
+        facts: ["Walk 4.8 to 5 km, 3 to 4 hrs"],
+        description:
+          "After a short briefing we set off on quiet mountain paths through deodar and pine forest, well away from the busy streets of Manali.",
+      },
+      {
+        day: 3,
+        label: "12:30 PM",
+        title: "Reach Dhungri and Hadimba Devi Temple",
+        description:
+          "The trail comes out at Dhungri, home to Hadimba Devi Temple among tall deodar trees. We explore the temple and its surroundings.",
+      },
+      {
+        day: 4,
+        label: "1:30 PM",
+        title: "Time at the temple",
+        description: "Free time to look at the wooden architecture, learn about its history and take photographs in the Dhungri forest.",
+      },
+      {
+        day: 5,
+        label: "2:30 PM",
+        title: "Return to Manali",
+        description: "The walk ends and we head back into Manali town.",
+      },
+    ],
+    inclusions: [
+      "Transport from Manali to Kanyal.",
+      "Experienced trek leader.",
+      "Packed lunch.",
+      "First-aid kit.",
+      "Trek assistance.",
+    ],
+    exclusions: [
+      "Personal expenses.",
+      "Meals other than the packed lunch.",
+      "Additional transport.",
+      "Entry fees, if any.",
+      "Anything not listed under inclusions.",
+    ],
+    notes: [
+      "Wear comfortable shoes with good grip, and carry water, sunglasses, sunscreen, a light jacket, rain protection and any personal medication.",
+      "Timings may change with weather and trail conditions.",
+    ],
+    faqs: [
+      {
+        q: "Is this walk suitable for children and older travellers?",
+        a: "Yes. It is an easy walk on village and forest paths with no steep climbs, and the pace is relaxed.",
+      },
+      {
+        q: "Do we come back to the start?",
+        a: "No. The walk is one way from Kanyal and ends at Hadimba Devi Temple, a short distance from Mall Road.",
+      },
+      {
+        q: "What time does it start?",
+        a: "We leave Manali at 8:30 AM and finish around 2:30 PM.",
+      },
+    ],
+    heroImage: tripImages["kanyal-dhungri-trail"].hero,
+    galleryImages: tripImages["kanyal-dhungri-trail"].gallery,
+  },
+  {
+    slug: "lama-dugh-day-hike",
+    name: "Lama Dugh Day Hike",
+    category: "trek",
+    featured: true,
+    order: 2,
+    region: "Manali",
+    route: "Manali to Manali",
+    durationDays: 1,
+    maxAltitudeM: 3170,
+    maxAltitudeFt: 10400,
+    difficulty: "Easy",
+    pricePerPersonINR: 4200,
+    shortDescription: "A full day from Manali up through deodar forest to an open meadow with views of Deo Tibba.",
+    overview: [
+      "Lama Dugh is a wide meadow above Manali, ringed by deodar trees and mountains. The hike climbs from near Hadimba Temple through deodar and oak forest until the trees open onto the grassland.",
+      "On a clear day you can see Deo Tibba and Indrasan from the meadow. It is a good day out for anyone who wants real mountain views without camping.",
+    ],
+    bestSeason:
+      "May to June and September to October for clear views. October to December can bring snow to the meadow; July and August are wet.",
+    fitnessLevel:
+      "Easy to moderate. It is a long day of about 14 to 16 km round trip with a steady climb of over 1,000 m, so you should be comfortable walking for 7 to 8 hours.",
+    howToReach: `The hike starts and ends on foot in Manali; we meet at a central point at 7:30 AM. ${reachManali}`,
+    itinerary: [
+      {
+        day: 1,
+        label: "7:30 AM",
+        title: "Meet in Manali",
+        description: "Meet your trek leader at the meeting point for a short briefing and equipment check.",
+      },
+      {
+        day: 2,
+        label: "8:00 AM",
+        title: "Start the hike",
+        facts: ["14 to 16 km round trip"],
+        description:
+          "We climb through forest near Dhungri and Hadimba Temple, then through dense deodar and oak with views opening over the valley.",
+      },
+      {
+        day: 3,
+        label: "12:00 PM",
+        title: "Reach Lama Dugh meadow",
+        facts: ["About 3,170 m (10,400 ft)"],
+        description: "Arrive at the meadow. Time to explore the open grassland and take in the Himalayan views.",
+      },
+      {
+        day: 4,
+        label: "1:00 PM",
+        title: "Lunch and rest",
+        description: "A packed lunch in the meadow and time to rest.",
+      },
+      {
+        day: 5,
+        label: "1:30 PM",
+        title: "Begin the descent",
+        description: "We walk back down to Manali on the same forest trail.",
+      },
+      {
+        day: 6,
+        label: "4:00 PM",
+        title: "Back in Manali",
+        description: "We reach Manali between 4:00 and 4:30 PM.",
+      },
+    ],
+    inclusions: [
+      "Experienced local trek leader.",
+      "Packed lunch.",
+      "Trekking assistance.",
+      "Basic first-aid support.",
+      "Forest and trail guidance.",
+    ],
+    exclusions: [
+      "Personal expenses.",
+      "Transport to and from the starting point, unless specified.",
+      "Meals other than the packed lunch.",
+      "Anything not listed under inclusions.",
+    ],
+    notes: [
+      "Wear comfortable shoes with good grip, and carry water, sunglasses, sunscreen, a light jacket, rain protection and any personal medication.",
+      "Timings may change with weather and trail conditions.",
+    ],
+    faqs: [
+      {
+        q: "Is Lama Dugh the same meadow used on the Rani Sui and Khanpari Tibba treks?",
+        a: "Yes. Both of those treks camp at Lama Dugh. This day hike goes up to the meadow and back in one day.",
+      },
+      {
+        q: "How long is the hike?",
+        a: "About 14 to 16 km round trip, usually from 8 AM to around 4:30 PM.",
+      },
+      {
+        q: "Can I do it in winter?",
+        a: "Often yes, but the upper trail and the meadow can be under snow from October to December, which makes it slower. Ask us about conditions for your dates.",
+      },
+    ],
+    heroImage: tripImages["lama-dugh-day-hike"].hero,
+    galleryImages: tripImages["lama-dugh-day-hike"].gallery,
+  },
+  {
+    slug: "khanpari-tibba-trek",
+    name: "Khanpari Tibba Trek",
+    category: "trek",
+    featured: true,
+    order: 6,
+    region: "Manali",
+    route: "Manali to Manali",
+    durationDays: 3,
+    maxAltitudeM: 4100,
+    maxAltitudeFt: 13450,
+    difficulty: "Moderate",
+    pricePerPersonINR: 7200,
+    shortDescription: "From Manali on foot to a quiet summit with wide views of the Pir Panjal.",
+    overview: [
+      "Khanpari Tibba is a summit above Manali, reached on foot from town through deodar and pine forest. The trail camps at the Lama Dugh meadow before climbing through meadows and rocky ground to the top.",
+      "From the summit at about 4,100 m there are views of snow peaks, glaciers and the valleys around Manali. It sees far fewer trekkers than the better-known routes nearby.",
+    ],
+    bestSeason:
+      "May to June and September to October. Avoid July and August, when heavy rain makes the trail slippery. Nights at camp can be close to freezing.",
+    fitnessLevel:
+      "Moderate. Summit day is about 9 km over 7 to 8 hours with steep and rocky sections, so build up with a few weeks of regular cardio.",
+    howToReach: `The trek starts and ends on foot in Manali near Hadimba Temple, so no drive is needed. ${reachManali}`,
+    itinerary: [
+      {
+        day: 1,
+        title: "Manali to Lama Dugh",
+        facts: ["2,050 m to 3,217 m", "Trek about 7 km, 4 to 5 hrs"],
+        description:
+          "We start near Hadimba Temple and climb through pine, cedar and oak forest. Views of Rohtang Pass, Deo Tibba, the Pir Panjal, Bara Shigri glacier and Indrasan open up as we gain height. Overnight in tents at the Lama Dugh meadow.",
+      },
+      {
+        day: 2,
+        title: "Lama Dugh to Khanpari Tibba and back",
+        facts: ["Summit about 4,100 m", "Trek about 9 km, 7 to 8 hrs"],
+        description:
+          "An early start on a trail that steepens through meadows and rocky sections, with views of snow peaks, glaciers and valleys. Time at the summit, then back to Lama Dugh for the night.",
+      },
+      {
+        day: 3,
+        title: "Lama Dugh to Manali",
+        facts: ["3,215 m to 2,050 m", "Trek 7 km, 3 to 4 hrs"],
+        description: "We walk back down the same forest trail to Manali.",
+      },
+    ],
+    inclusions: [
+      "All trek permits and entry fees.",
+      "Experienced trek leaders and guides.",
+      "Camping accommodation with sleeping bags and foam mattresses.",
+      "Vegetarian meals during the trek.",
+      "Kitchen and dining tents.",
+      "First-aid kit and emergency oxygen.",
+    ],
+    exclusions: [
+      "Hotel stay in Manali.",
+      "Personal porter or mule.",
+      "Trekking gear rental.",
+      "Travel or medical insurance.",
+      "Costs caused by weather, roadblocks or other unforeseen situations.",
+      "Sightseeing or activities not in the itinerary.",
+      "Personal expenses of any kind.",
+    ],
+    faqs: [
+      {
+        q: "How is this different from the Rani Sui Lake trek?",
+        a: "Both camp at Lama Dugh. Rani Sui goes to a meadow lake, while Khanpari Tibba climbs higher to a summit, so the second day is steeper and rockier.",
+      },
+      {
+        q: "Is it suitable for beginners?",
+        a: "Fit beginners can do it. The summit day is steep in places, so a few weeks of preparation make it much more enjoyable.",
+      },
+      {
+        q: "Do we need any transport?",
+        a: "No. The trek begins and ends on foot in Manali.",
+      },
+    ],
+    heroImage: tripImages["khanpari-tibba-trek"].hero,
+    galleryImages: tripImages["khanpari-tibba-trek"].gallery,
+  },
+  {
+    slug: "deo-tibba-base-camp-trek",
+    name: "Deo Tibba Base Camp Trek",
+    category: "trek",
+    featured: true,
+    order: 11,
+    region: "Pir Panjal, Manali",
+    route: "Manali to Manali",
+    durationDays: 6,
+    maxAltitudeM: 4480,
+    maxAltitudeFt: 14700,
+    difficulty: "Challenging",
+    pricePerPersonINR: 8200,
+    shortDescription: "Six days below Deo Tibba to the turquoise glacial lake of Chota Chandratal.",
+    overview: [
+      "Deo Tibba Base Camp sits below Deo Tibba (6,001 m) in the Pir Panjal near Manali, among glaciers, moraine and high alpine ground. The route climbs from Khanol through forest and the meadows of Seri to the remote camp at Tainta.",
+      "The high point is Chota Chandratal, a turquoise glacial lake at about 4,480 m surrounded by rock walls and snowfields. It is a remote, quieter trek for people who already have some trekking experience.",
+    ],
+    bestSeason:
+      "June and September to early October. May and June can bring snowfall at base camp; July and August are wet in the lower valley.",
+    fitnessLevel:
+      "Challenging. Six days at altitude, with steep moraine sections and a long 12 to 13 km descent day. Previous multi-day trekking and 6 to 8 weeks of cardio and leg training are recommended.",
+    howToReach: `Transport from Manali to Khanol (18 km) and back is included. ${reachManali}`,
+    itinerary: [
+      {
+        day: 1,
+        title: "Manali to Khanol, trek to Chikka",
+        facts: ["To 3,200 m", "Drive 18 km", "Trek 6 km, 2 to 3 hrs"],
+        description:
+          "A short drive to Khanol, then a gradual climb through oak and deodar forest with wildflowers. After a few steep sections the trail eases into Chikka, a quiet campsite with a small temple, shepherd huts and views of Deo Tibba and Indrasan.",
+      },
+      {
+        day: 2,
+        title: "Chikka to Seri",
+        facts: ["To about 3,900 m", "Trek 8 to 9 km, 6 to 7 hrs"],
+        description:
+          "Along the Jagatsukh Nallah through oak and deodar forest that opens into the Seri meadows. There are rocky sections and large boulders, so careful footing matters, especially after rain. Camp near a freshwater spring with views of Norbu Peak, Jagatsukh Peak and Deo Tibba.",
+      },
+      {
+        day: 3,
+        title: "Seri to Deo Tibba Base Camp (Tainta)",
+        facts: ["Trek 4 km, 2 to 3 hrs"],
+        description:
+          "A harder day following the Jagatsukh Nallah over rocky ground, steep sections and moraine, past a waterfall, to the high camp at Tainta. Time to explore around camp.",
+      },
+      {
+        day: 4,
+        title: "Tainta to Chota Chandratal and back",
+        facts: ["Lake at about 4,480 m", "Trek 2 to 3 km, about 1 hr each way"],
+        description:
+          "Across glacial moraine and rocky slopes, with views of the Deo Tibba massif, to Chota Chandratal and its turquoise water below rock walls and snowfields. Time at the lake, then back to Tainta for dinner.",
+      },
+      {
+        day: 5,
+        title: "Tainta to Chikka",
+        facts: ["Trek 12 to 13 km, 7 to 8 hrs"],
+        description:
+          "A long descent through rugged ground into the Seri meadow, past streams and waterfalls, then through forest beside the stream down to Chikka for the night.",
+      },
+      {
+        day: 6,
+        title: "Chikka to Khanol, drive to Manali",
+        facts: ["Trek 6 km, 2 to 3 hrs", "Drive 18 km"],
+        description:
+          "After breakfast we walk down the forest trail to Khanol, where the vehicle takes us back to Manali through the Kullu Valley.",
+      },
+    ],
+    inclusions: [
+      "Permissions from local authorities and entry fees, including IMF (Indian Mountaineering Foundation) permission.",
+      "Meals from Day 1 lunch to the last day's breakfast, with vegetarian and egg options.",
+      "Well-trained, certified instructors.",
+      "Transport between Manali and Khanol.",
+      "Dome or alpine tents on a sharing basis; twin-sharing available at extra cost.",
+      "Oxygen cylinders and a fully equipped first-aid kit.",
+      "Sleeping bags, mattresses, tents, dining and kitchen tents and utensils.",
+      "Insurance cover for Badger Adventures staff.",
+      "Trek completion certificate from Badger Adventures.",
+    ],
+    exclusions: [
+      "Hotel stay in Manali on the last day.",
+      "Porter for personal belongings.",
+      "Personal trekking equipment such as poles, shoes, jackets, trek pants and backpacks.",
+      "Sightseeing.",
+      "Costs from natural calamities or other events outside our control.",
+      "Personal expenses and anything not listed under inclusions.",
+    ],
+    notes: [
+      "The itinerary may change with sudden weather or other conditions in the mountains.",
+      "We expect you to carry your own backpack. A porter for your backpack costs ₹6,600 if paid online at least 10 days ahead, or ₹8,600 if arranged in Manali.",
+      "Maximum backpack weight for a porter is 15 kg, with a waterproof cover. Suitcases, strollers and other bags are not accepted.",
+    ],
+    faqs: [
+      {
+        q: "Do we climb Deo Tibba?",
+        a: "No. This trek goes to the base camp at Tainta and the glacial lake of Chota Chandratal below the peak. Climbing Deo Tibba itself is a separate technical expedition.",
+      },
+      {
+        q: "How hard is the Deo Tibba Base Camp trek?",
+        a: "It is challenging: six days, with moraine and boulder sections above 4,000 m. It suits trekkers who have done at least one multi-day trek before.",
+      },
+      {
+        q: "Will there be snow?",
+        a: "In May and June there can be snow and fresh snowfall at base camp. Later in the season the route is mostly clear, though nights are cold.",
+      },
+    ],
+    heroImage: tripImages["deo-tibba-base-camp-trek"].hero,
+    galleryImages: tripImages["deo-tibba-base-camp-trek"].gallery,
   },
 ];

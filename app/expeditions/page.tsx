@@ -1,11 +1,12 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { TripListing } from "@/components/trips/TripListing";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Himalayan Expeditions from Manali",
   description:
-    "Guided mountaineering expeditions from Manali: Friendship Peak (5,289 m) and Yunam Peak (6,111 m), with technical gear and certified instructors.",
-};
+    "Himalayan expeditions from Manali: Friendship Peak (5,289 m) and Yunam Peak (6,111 m), with technical gear, acclimatisation days and experienced instructors.",
+  path: "/expeditions",
+});
 
 export default function ExpeditionsPage() {
   return (

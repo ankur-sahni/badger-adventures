@@ -1,11 +1,12 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { TripListing } from "@/components/trips/TripListing";
 
-export const metadata: Metadata = {
-  title: "Treks in Manali",
+export const metadata = pageMetadata({
+  title: "Treks in Manali: Guided Small-Group Himalayan Treks",
   description:
-    "Guided treks from Manali, from easy weekend walks to high passes: Chandrakhani, Beas Kund, Bhrigu Lake, Sar Pass and more.",
-};
+    "Guided trekking in Manali, from weekend walks to high passes: Chandrakhani, Beas Kund, Bhrigu Lake, Sar Pass and more, with prices and day-by-day plans.",
+  path: "/treks",
+});
 
 export default function TreksPage() {
   return (

@@ -3,12 +3,25 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { heroVideo, images } from "@/config/images";
-import { usePrefersReducedMotion } from "@/lib/useMediaQuery";
+import { useMediaQuery, usePrefersReducedMotion } from "@/lib/useMediaQuery";
 
 export function HeroMedia() {
   const layerRef = useRef<HTMLDivElement>(null);
   const reducedMotion = usePrefersReducedMotion();
+  const isDesktop = useMediaQuery("(min-width: 768px)");
+  const [pageLoaded, setPageLoaded] = useState(false);
   const [videoFailed, setVideoFailed] = useState(false);
+
+  // Start the video only after the page has loaded so it never competes with the poster image and fonts.
+  useEffect(() => {
+    const markLoaded = () => setPageLoaded(true);
+    if (document.readyState === "complete") {
+      const timer = setTimeout(markLoaded, 0);
+      return () => clearTimeout(timer);
+    }
+    window.addEventListener("load", markLoaded, { once: true });
+    return () => window.removeEventListener("load", markLoaded);
+  }, []);
 
   useEffect(() => {
     const layer = layerRef.current;
@@ -41,15 +54,15 @@ export function HeroMedia() {
           sizes="100vw"
           className="object-cover"
         />
-        {!reducedMotion && !videoFailed && (
+        {pageLoaded && !reducedMotion && !videoFailed && (
           <video
-            className="absolute inset-0 size-full object-cover"
-            src={heroVideo.src}
+            key={isDesktop ? "desktop" : "mobile"}
+            className="absolute inset-0 size-full animate-[fade-in_600ms_ease-out] object-cover"
+            src={isDesktop ? heroVideo.desktop : heroVideo.mobile}
             autoPlay
             muted
             loop
             playsInline
-            preload="metadata"
             aria-hidden
             onError={() => setVideoFailed(true)}
           />

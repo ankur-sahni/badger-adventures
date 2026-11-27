@@ -7,6 +7,8 @@ export type ImageAsset = {
 
 export type ItineraryDay = {
   day: number;
+  // Replaces "Day N" in headings, e.g. a time of day on single-day hikes.
+  label?: string;
   title: string;
   description: string;
   facts?: string[];

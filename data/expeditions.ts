@@ -4,7 +4,6 @@ import { reachManali } from "./shared";
 
 // Itineraries, inclusions and exclusions come from the Badger Adventures itinerary PDFs.
 // TODO: verify with guides: load-ferry altitude, reserve day and FAQ text.
-// TODO: placeholder prices. Replace pricePerPersonINR with real prices.
 
 const expeditionPorterNotes = [
   "We expect you to carry your own backpack. A porter for your backpack costs ₹7,600 if paid online at least 10 days ahead, or ₹8,600 if arranged in Manali.",
@@ -24,7 +23,7 @@ export const expeditions: Trip[] = [
     maxAltitudeM: 5289,
     maxAltitudeFt: 17352,
     difficulty: "Challenging",
-    pricePerPersonINR: 18000,
+    pricePerPersonINR: 32000,
     shortDescription: "A first 5,000 m summit with glacier travel and snow climbing, close to Manali.",
     overview: [
       "Friendship Peak (5,289 m) in the Pir Panjal Range is one of the most popular first mountaineering summits in the Indian Himalayas. It is close to Manali and introduces glacier travel, snow climbing and roped movement without highly technical ground.",
@@ -133,7 +132,7 @@ export const expeditions: Trip[] = [
     maxAltitudeM: 6111,
     maxAltitudeFt: 20049,
     difficulty: "Challenging",
-    pricePerPersonINR: 28000,
+    pricePerPersonINR: 34000,
     shortDescription: "A non-technical 6,000 m summit near Baralacha La that rewards careful acclimatisation.",
     overview: [
       "Mount Yunam (6,111 m) near Baralacha La in Lahaul is one of the most accessible 6,000 m summits in India. It does not need complex ropework or ice climbing, but the extreme altitude demands strong stamina and strict acclimatisation.",
