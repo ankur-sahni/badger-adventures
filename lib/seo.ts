@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { Faq, ImageAsset, Trip } from "@/types";
 import { site } from "@/config/site";
 import { images } from "@/config/images";
+import { omPrakash, rahulNegi } from "@/data/founders";
 import { itineraryLabel, tripHref } from "./trips";
 
 type PageMetaInput = {
@@ -74,6 +75,30 @@ export function travelAgencySchema() {
     },
     areaServed: "Himachal Pradesh, India",
     sameAs: [site.instagram.url],
+    founder: [
+      {
+        "@type": "Person",
+        name: omPrakash.name,
+        jobTitle: omPrakash.role,
+        hasCredential: omPrakash.credentials.map((credential) => ({
+          "@type": "EducationalOccupationalCredential",
+          name: credential.course,
+          credentialCategory: "certificate",
+          dateCreated: String(credential.year),
+          recognizedBy: { "@type": "Organization", name: credential.institute },
+        })),
+      },
+      {
+        "@type": "Person",
+        name: rahulNegi.name,
+        jobTitle: rahulNegi.role,
+        hasCredential: {
+          "@type": "EducationalOccupationalCredential",
+          name: rahulNegi.qualification,
+          credentialCategory: "degree",
+        },
+      },
+    ],
   };
 }
 

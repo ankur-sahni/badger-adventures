@@ -26,6 +26,13 @@ const inr = new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR",
 const grouped = new Intl.NumberFormat("en-IN");
 
 export const formatPrice = (amount: number) => inr.format(amount);
+
+// Displayed saving is 20% of the final price, rounded to a tidy figure: nearest 100 under ₹1,000, else nearest 500.
+export function displayedSaving(price: number) {
+  const raw = price * 0.2;
+  const step = raw < 1000 ? 100 : 500;
+  return Math.round(raw / step) * step;
+}
 export const formatDuration = (days: number) => (days === 1 ? "Day hike" : `${days}D/${days - 1}N`);
 export const itineraryLabel = (day: { day: number; label?: string }) => day.label ?? `Day ${day.day}`;
 export const formatFeet = (feet: number) => `${grouped.format(feet)} ft`;

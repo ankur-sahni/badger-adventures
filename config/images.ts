@@ -22,6 +22,8 @@ export const images = {
     "photo-1791370234119-980de6a526c1",
     "A single tent pitched on a grassy mountain slope above a valley filled with cloud",
   ),
+  // Stand-in until a photo of the founders is supplied; deliberately shows no person.
+  founders: img("photo-1772625719423-5f2ba59ab1b4", "A snow-capped Himalayan peak emerging from cloud"),
 } satisfies Record<string, ImageAsset>;
 
 // Gallery page, in display order. The bento layout repeats every 12 images.

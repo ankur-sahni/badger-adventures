@@ -2,7 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Trip } from "@/types";
 import { MapPinIcon, MountainIcon } from "@/components/icons";
-import { formatDuration, formatFeet, formatPrice, tripHref } from "@/lib/trips";
+import { formatDuration, formatFeet, tripHref } from "@/lib/trips";
+import { PriceTag } from "./PriceTag";
 
 type TripCardProps = {
   trip: Trip;
@@ -39,8 +40,7 @@ export function TripCard({ trip, headingLevel: Heading = "h3", preloadImage = fa
           <span>{trip.route}</span>
         </p>
         <p className="mt-auto pt-2 text-[15px]">
-          <span className="font-semibold">{formatPrice(trip.pricePerPersonINR)}</span>
-          <span className="text-slate"> / person</span>
+          <PriceTag price={trip.pricePerPersonINR} />
         </p>
       </div>
     </Link>

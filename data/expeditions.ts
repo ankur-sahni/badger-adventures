@@ -28,6 +28,7 @@ export const expeditions: Trip[] = [
     overview: [
       "Friendship Peak (5,289 m) in the Pir Panjal Range is one of the most popular first mountaineering summits in the Indian Himalayas. It is close to Manali and introduces glacier travel, snow climbing and roped movement without highly technical ground.",
       "The plan follows the climb-high, sleep-low principle, with a hotel night and briefing in Manali, a load-ferry day for acclimatisation and a reserve day for weather. All technical climbing gear is included.",
+      "Our co-founder Om Prakash summited Friendship Peak during his Advanced Mountaineering Course at ABVIMAS Manali. He plans this climb with the certified guides who lead it on the mountain.",
     ],
     bestSeason:
       "May to June and September to October. Early season has more snow on the route; autumn is colder with firmer, icier ground.",
@@ -137,6 +138,7 @@ export const expeditions: Trip[] = [
     overview: [
       "Mount Yunam (6,111 m) near Baralacha La in Lahaul is one of the most accessible 6,000 m summits in India. It does not need complex ropework or ice climbing, but the extreme altitude demands strong stamina and strict acclimatisation.",
       "The route drives from Manali through the Atal Tunnel and over Baralacha La, past Deepak Tal and Suraj Tal, to base camp at Bharatpur. We follow a climb-high, sleep-low plan with a load-ferry day before the summit.",
+      "The expedition is planned by our co-founder Om Prakash, a qualified mountaineering instructor trained at ABVIMAS Manali and the Nehru Institute of Mountaineering, and led on the mountain by our certified guides.",
     ],
     bestSeason: "Late June to mid-September, when the Manali to Leh highway is open and the route is mostly free of deep snow.",
     fitnessLevel:

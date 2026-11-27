@@ -3,6 +3,7 @@ import { faqPageSchema, pageMetadata, travelAgencySchema } from "@/lib/seo";
 import { JsonLd } from "@/components/JsonLd";
 import { Hero } from "@/components/home/Hero";
 import { About } from "@/components/home/About";
+import { Founders } from "@/components/home/Founders";
 import { WhyChooseUs } from "@/components/home/WhyChooseUs";
 import { TripsSection } from "@/components/home/TripsSection";
 import { FaqSection } from "@/components/home/FaqSection";
@@ -24,6 +25,7 @@ export default function HomePage() {
       <JsonLd data={faqPageSchema(homeFaqs)} />
       <Hero />
       <About />
+      <Founders />
       <WhyChooseUs />
       <TripsSection
         category="trek"

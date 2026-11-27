@@ -2,6 +2,7 @@ import { site } from "@/config/site";
 import { enquiryTripOptions } from "@/lib/trips";
 import { InstagramIcon, PhoneIcon } from "@/components/icons";
 import { EnquiryForm } from "@/components/EnquiryForm";
+import { EnquiryTrustLine } from "@/components/EnquiryTrustLine";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Reveal } from "@/components/Reveal";
 
@@ -17,6 +18,7 @@ export function Contact() {
             subtitle="Call, message or send an enquiry. We reply with dates, price and a full plan."
             tone="dark"
           />
+          <EnquiryTrustLine />
           <Reveal delay={120}>
             <ul className="mt-6 flex flex-col gap-1">
               {site.phones.map((phone) => (

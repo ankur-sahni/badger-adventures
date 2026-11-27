@@ -12,10 +12,11 @@ import {
   formatDuration,
   formatFeet,
   formatMetres,
-  formatPrice,
   itineraryLabel,
 } from "@/lib/trips";
 import { faqPageSchema, touristTripSchema } from "@/lib/seo";
+import { EnquiryTrustLine } from "@/components/EnquiryTrustLine";
+import { PriceTag } from "./PriceTag";
 
 export function TripPage({ trip }: { trip: Trip }) {
   const altitude = `${formatFeet(trip.maxAltitudeFt)} (${formatMetres(trip.maxAltitudeM)})`;
@@ -25,7 +26,8 @@ export function TripPage({ trip }: { trip: Trip }) {
     { label: "Difficulty", value: trip.difficulty },
     { label: "Start and end", value: trip.route },
     { label: "Region", value: trip.region },
-    { label: "Price", value: `${formatPrice(trip.pricePerPersonINR)} / person` },
+    { label: "Price", value: <PriceTag price={trip.pricePerPersonINR} className="justify-end" /> },
+    { label: "Led by", value: "Certified guides" },
   ];
 
   return (
@@ -54,8 +56,7 @@ export function TripPage({ trip }: { trip: Trip }) {
           <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3">
             <ButtonLink href="#enquire">Enquire for dates</ButtonLink>
             <p className="text-lg">
-              <span className="font-semibold">{formatPrice(trip.pricePerPersonINR)}</span>
-              <span className="text-snow/80"> / person</span>
+              <PriceTag price={trip.pricePerPersonINR} tone="dark" />
             </p>
           </div>
         </div>
@@ -211,6 +212,7 @@ export function TripPage({ trip }: { trip: Trip }) {
               subtitle={`Tell us when you would like to do the ${trip.name} and we will reply with available dates and a full plan.`}
               tone="dark"
             />
+            <EnquiryTrustLine />
           </div>
           <Reveal delay={120} className="lg:w-7/12">
             <EnquiryForm tripOptions={enquiryTripOptions} defaultTrip={trip.name} />
