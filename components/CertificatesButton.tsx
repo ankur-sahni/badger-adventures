@@ -16,9 +16,9 @@ export function CertificatesButton({ certificates }: { certificates: ImageAsset[
           setIndex(0);
           dialogRef.current?.showModal();
         }}
-        className="inline-flex min-h-11 items-center text-sm tracking-[0.08em] text-navy underline decoration-slate/40 underline-offset-8 transition-colors duration-300 hover:decoration-navy"
+        className="inline-flex min-h-11 items-center text-sm tracking-[0.08em] text-navy [--link-rest:rgb(60_84_104/0.35)]"
       >
-        View certificates ({certificates.length})
+        <span className="link-line">View certificates ({certificates.length})</span>
       </button>
       <Lightbox
         dialogRef={dialogRef}

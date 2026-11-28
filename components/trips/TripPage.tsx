@@ -1,5 +1,7 @@
 import Image from "next/image";
+import { ViewTransition, type CSSProperties } from "react";
 import type { Trip } from "@/types";
+import { SplitWords } from "@/components/SplitWords";
 import { ButtonLink } from "@/components/Button";
 import { Accordion } from "@/components/Accordion";
 import { FaqAccordion } from "@/components/FaqAccordion";
@@ -13,6 +15,7 @@ import {
   formatFeet,
   formatMetres,
   itineraryLabel,
+  tripPhotoTransitionName,
 } from "@/lib/trips";
 import { faqPageSchema, touristTripSchema } from "@/lib/seo";
 import { EnquiryTrustLine } from "@/components/EnquiryTrustLine";
@@ -35,25 +38,36 @@ export function TripPage({ trip }: { trip: Trip }) {
       <JsonLd data={touristTripSchema(trip)} />
       <JsonLd data={faqPageSchema(trip.faqs)} />
       <section className="relative isolate flex h-[62svh] min-h-[26rem] max-h-[36rem] items-end overflow-hidden text-snow">
-        <Image
-          src={trip.heroImage.src}
-          alt={trip.heroImage.alt}
-          fill
-          preload
-          sizes="100vw"
-          className="-z-20 object-cover"
-        />
+        <ViewTransition name={tripPhotoTransitionName(trip.slug)} share="morph" default="none">
+          <div className="absolute inset-0 -z-20 overflow-hidden bg-navy">
+            <div className="parallax-hero absolute inset-x-0 -top-[6%] h-[118%]">
+              <Image
+                src={trip.heroImage.src}
+                alt={trip.heroImage.alt}
+                fill
+                preload
+                sizes="100vw"
+                className="object-cover"
+              />
+            </div>
+          </div>
+        </ViewTransition>
         <div
           aria-hidden
           className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgb(11_31_51/0.55)_0%,rgb(11_31_51/0.25)_40%,rgb(11_31_51/0.88)_100%)]"
         />
         <div className="container-page pb-10 lg:pb-12">
-          <p className="eyebrow text-snow/90">{trip.region}</p>
-          <h1 className="mt-3 max-w-3xl font-display text-4xl leading-[1.08] font-light sm:text-5xl">{trip.name}</h1>
-          <p className="mt-3 text-snow/90">
+          <p className="eyebrow rise text-snow/90">{trip.region}</p>
+          <h1 className="mt-3 max-w-3xl font-display text-4xl leading-[1.08] font-light sm:text-5xl">
+            <SplitWords text={trip.name} delay={80} />
+          </h1>
+          <p className="rise mt-3 text-snow/90" style={{ "--rise-delay": "320ms" } as CSSProperties}>
             {formatDuration(trip.durationDays)} · {altitude} · {trip.difficulty}
           </p>
-          <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3">
+          <div
+            className="rise mt-6 flex flex-wrap items-center gap-x-6 gap-y-3"
+            style={{ "--rise-delay": "440ms" } as CSSProperties}
+          >
             <ButtonLink href="#enquire">Enquire for dates</ButtonLink>
             <p className="text-lg">
               <PriceTag price={trip.pricePerPersonINR} tone="dark" />
@@ -94,7 +108,11 @@ export function TripPage({ trip }: { trip: Trip }) {
               title={trip.durationDays === 1 ? "Hour by hour" : "Day by day"}
             />
           </div>
-          <Reveal delay={100} className="lg:w-8/12">
+          <Reveal delay={100} className="relative pl-5 sm:pl-7 lg:w-8/12">
+            {/* Trail line that fills down the itinerary as the reader scrolls through the days. */}
+            <span aria-hidden className="absolute top-0 bottom-0 left-0 w-px bg-ice">
+              <span className="trail-progress block h-full origin-top bg-slate" />
+            </span>
             <Accordion
               items={trip.itinerary.map((day) => ({
                 key: `day-${day.day}`,
@@ -174,7 +192,7 @@ export function TripPage({ trip }: { trip: Trip }) {
           <ul className="mt-8 flex flex-col gap-5 sm:flex-row">
             {trip.galleryImages.map((image, index) => (
               <li key={image.src} className="sm:w-1/3">
-                <Reveal delay={index * 90}>
+                <Reveal variant="image" delay={index * 120}>
                   <div className="relative aspect-[4/3] overflow-hidden rounded-[var(--radius-card)] shadow-[var(--shadow-card)]">
                     <Image
                       src={image.src}

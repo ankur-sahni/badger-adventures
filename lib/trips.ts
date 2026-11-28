@@ -22,6 +22,9 @@ export function tripHref(trip: Pick<Trip, "category" | "slug">) {
   return `/${trip.category === "trek" ? "treks" : "expeditions"}/${trip.slug}`;
 }
 
+// Shared by the trip card photo and the trip page header so the browser morphs one into the other.
+export const tripPhotoTransitionName = (slug: string) => `trip-photo-${slug}`;
+
 const inr = new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 0 });
 const grouped = new Intl.NumberFormat("en-IN");
 

@@ -34,9 +34,9 @@ export function TripsSection({ category, eyebrow, title, subtitle, className = "
         </TripSlider>
         <Link
           href={isTrek ? "/treks" : "/expeditions"}
-          className="inline-flex min-h-11 items-center text-sm tracking-[0.08em] text-navy underline decoration-slate/40 underline-offset-8 transition-colors duration-300 hover:decoration-navy"
+          className="inline-flex min-h-11 items-center text-sm tracking-[0.08em] text-navy [--link-rest:rgb(60_84_104/0.35)]"
         >
-          {isTrek ? "View all treks" : "View all expeditions"}
+          <span className="link-line">{isTrek ? "View all treks" : "View all expeditions"}</span>
         </Link>
       </div>
     </section>

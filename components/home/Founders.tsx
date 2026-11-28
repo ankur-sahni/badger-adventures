@@ -9,15 +9,17 @@ export function Founders() {
   return (
     <section aria-labelledby="founders-title" className="section-y bg-ice/25">
       <div className="container-page flex flex-col gap-8 lg:flex-row lg:items-center lg:gap-14">
-        <Reveal className="lg:w-5/12">
+        <Reveal variant="image" className="lg:w-5/12">
           <div className="relative aspect-[16/10] overflow-hidden rounded-[var(--radius-card)] shadow-[var(--shadow-card)] lg:aspect-[4/5] lg:max-h-[30rem]">
-            <Image
-              src={images.founders.src}
-              alt={images.founders.alt}
-              fill
-              sizes="(min-width: 1280px) 500px, (min-width: 1024px) 42vw, 100vw"
-              className="object-cover"
-            />
+            <div className="parallax-view absolute inset-x-0 -top-[8%] h-[116%]">
+              <Image
+                src={images.founders.src}
+                alt={images.founders.alt}
+                fill
+                sizes="(min-width: 1280px) 500px, (min-width: 1024px) 42vw, 100vw"
+                className="object-cover"
+              />
+            </div>
           </div>
         </Reveal>
         <div className="lg:w-7/12">

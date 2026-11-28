@@ -46,27 +46,29 @@ export function HeroMedia() {
     // Navy-to-slate gradient shows if both the video and the poster image fail.
     <div className="absolute inset-0 -z-10 overflow-hidden bg-gradient-to-b from-navy via-slate to-navy">
       <div ref={layerRef} className="absolute -inset-x-0 -top-[5%] h-[115%] will-change-transform">
-        <Image
-          src={images.hero.src}
-          alt={images.hero.alt}
-          fill
-          preload
-          sizes="100vw"
-          className="object-cover"
-        />
-        {pageLoaded && !reducedMotion && !videoFailed && (
-          <video
-            key={isDesktop ? "desktop" : "mobile"}
-            className="absolute inset-0 size-full animate-[fade-in_600ms_ease-out] object-cover"
-            src={isDesktop ? heroVideo.desktop : heroVideo.mobile}
-            autoPlay
-            muted
-            loop
-            playsInline
-            aria-hidden
-            onError={() => setVideoFailed(true)}
+        <div className="settle absolute inset-0">
+          <Image
+            src={images.hero.src}
+            alt={images.hero.alt}
+            fill
+            preload
+            sizes="100vw"
+            className="object-cover"
           />
-        )}
+          {pageLoaded && !reducedMotion && !videoFailed && (
+            <video
+              key={isDesktop ? "desktop" : "mobile"}
+              className="absolute inset-0 size-full animate-[fade-in_600ms_ease-out] object-cover"
+              src={isDesktop ? heroVideo.desktop : heroVideo.mobile}
+              autoPlay
+              muted
+              loop
+              playsInline
+              aria-hidden
+              onError={() => setVideoFailed(true)}
+            />
+          )}
+        </div>
       </div>
     </div>
   );

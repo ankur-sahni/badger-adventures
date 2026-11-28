@@ -79,13 +79,19 @@ export function Navbar() {
   return (
     <div onKeyDown={trapFocus}>
       <header
+        style={{ viewTransitionName: "site-header" }}
         className={`fixed inset-x-0 top-0 z-50 text-snow transition-[background-color,box-shadow] duration-500 ease-[var(--ease-soft)] ${
           solid
             ? "bg-navy shadow-[0_8px_30px_-20px_rgb(0_0_0/0.6)]"
             : "bg-[linear-gradient(180deg,rgb(11_31_51/0.55),rgb(11_31_51/0))]"
         }`}
       >
-        <nav aria-label="Main" className="container-page flex h-16 items-center justify-between gap-6">
+        <nav
+          aria-label="Main"
+          className={`container-page flex items-center justify-between gap-6 transition-[height] duration-500 ease-[var(--ease-out)] ${
+            solid ? "h-16" : "h-20"
+          }`}
+        >
           <Wordmark onClick={close} />
 
           <ul className="hidden items-center gap-8 lg:flex">

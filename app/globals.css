@@ -15,6 +15,7 @@
   --shadow-card: 0 12px 32px -16px rgb(11 31 51 / 0.22);
   --shadow-card-hover: 0 22px 44px -18px rgb(11 31 51 / 0.34);
   --ease-soft: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @theme inline {
@@ -47,6 +48,28 @@
   padding-block: 3rem;
   @media (width >= 48rem) {
     padding-block: 4rem;
+  }
+}
+
+/* Text link: a resting hairline, with a solid line drawing across it on hover or focus. Set --link-rest per tone. */
+@utility link-line {
+  padding-bottom: 6px;
+  background-image:
+    linear-gradient(currentColor, currentColor),
+    linear-gradient(var(--link-rest, currentColor), var(--link-rest, currentColor));
+  background-size:
+    0% 1px,
+    100% 1px;
+  background-position:
+    0 100%,
+    0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 600ms var(--ease-out);
+  :is(a, button):hover > &,
+  :is(a, button):focus-visible > & {
+    background-size:
+      100% 1px,
+      100% 1px;
   }
 }
 
@@ -93,6 +116,132 @@ body {
   transform: none;
 }
 
+/* Images open from a soft inset frame; the final inset is negative so card shadows are not clipped. */
+.reveal-image {
+  clip-path: inset(10% 6% round var(--radius-card));
+  transition: clip-path 1200ms var(--ease-out);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal-image.is-visible {
+  clip-path: inset(-48px round var(--radius-card));
+}
+
+/* Page-load entrance for hero copy. */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 24px, 0);
+  }
+}
+
+@keyframes word-rise {
+  from {
+    transform: translate3d(0, 105%, 0);
+  }
+}
+
+@keyframes settle {
+  from {
+    transform: scale(1.08);
+  }
+}
+
+.rise {
+  animation: rise 900ms var(--ease-out) both;
+  animation-delay: var(--rise-delay, 0ms);
+}
+
+.rise-word {
+  animation: word-rise 1000ms var(--ease-out) both;
+}
+
+.settle {
+  animation: settle 2600ms var(--ease-out) both;
+}
+
+/* Scroll-linked depth. Browsers without scroll timelines keep the static layout. */
+@keyframes parallax-view {
+  from {
+    transform: translate3d(0, -6%, 0);
+  }
+  to {
+    transform: translate3d(0, 6%, 0);
+  }
+}
+
+@keyframes parallax-hero {
+  to {
+    transform: translate3d(0, 12%, 0);
+  }
+}
+
+@keyframes trail-draw {
+  from {
+    transform: scaleY(0);
+  }
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .parallax-view {
+      animation: parallax-view linear both;
+      animation-timeline: view();
+    }
+
+    .parallax-hero {
+      animation: parallax-hero linear both;
+      animation-timeline: scroll(root);
+      animation-range: 0 100svh;
+    }
+
+    .trail-progress {
+      animation: trail-draw linear both;
+      animation-timeline: view();
+      animation-range: entry 30% cover 70%;
+    }
+  }
+}
+
+/* Trip photo morphs from its card into the trip page header. */
+::view-transition {
+  pointer-events: none;
+}
+
+::view-transition-group(.morph) {
+  animation-duration: 550ms;
+  animation-timing-function: var(--ease-out);
+}
+
+::view-transition-old(.morph),
+::view-transition-new(.morph) {
+  height: 100%;
+  object-fit: cover;
+}
+
+::view-transition-image-pair(.morph) {
+  animation-name: via-blur;
+}
+
+@keyframes via-blur {
+  30% {
+    filter: blur(3px);
+  }
+}
+
+::view-transition-group(site-header) {
+  animation: none;
+  z-index: 100;
+}
+
+::view-transition-old(site-header) {
+  display: none;
+}
+
+::view-transition-new(site-header) {
+  animation: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -102,6 +251,7 @@ body {
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     transition-delay: 0ms !important;
@@ -110,5 +260,16 @@ body {
   .reveal {
     opacity: 1;
     transform: none;
+  }
+
+  .reveal-image {
+    clip-path: none;
+  }
+
+  ::view-transition-old(*),
+  ::view-transition-new(*),
+  ::view-transition-group(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
   }
 }
